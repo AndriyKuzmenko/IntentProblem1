@@ -164,7 +164,8 @@
         <Button
             android:layout_width="0px"
             android:layout_height="match_parent"
-            android:layout_weight="70"
+            android:layout_weight="80"
+            android:onClick="goToCredits"
             android:text="Credits" />
 
         <Space
