@@ -44,4 +44,16 @@ public class MainActivity extends AppCompatActivity
         a=Double.parseDouble(String.valueOf(display.getText()));
         sign='/';
     }
+
+    public void answer(View view)
+    {
+        b=Double.parseDouble(String.valueOf(display.getText()));
+
+        if (sign=='+') answer=a+b;
+        else if (sign=='-') answer=a-b;
+        else if (sign=='*') answer=a*b;
+        else if (sign=='/') answer=a/b;
+
+        display.setText(""+answer);
+    }
 }
