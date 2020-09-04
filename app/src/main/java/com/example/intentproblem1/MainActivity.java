@@ -25,24 +25,28 @@ public class MainActivity extends AppCompatActivity
     {
         a=Double.parseDouble(String.valueOf(display.getText()));
         sign='+';
+        display.setText("");
     }
 
     public void minus(View view)
     {
         a=Double.parseDouble(String.valueOf(display.getText()));
         sign='-';
+        display.setText("");
     }
 
     public void multiply(View view)
     {
         a=Double.parseDouble(String.valueOf(display.getText()));
         sign='*';
+        display.setText("");
     }
 
     public void divide(View view)
     {
         a=Double.parseDouble(String.valueOf(display.getText()));
         sign='/';
+        display.setText("");
     }
 
     public void answer(View view)
@@ -55,5 +59,10 @@ public class MainActivity extends AppCompatActivity
         else if (sign=='/') answer=a/b;
 
         display.setText(""+answer);
+    }
+
+    public void clear(View view)
+    {
+        display.setText("");
     }
 }
