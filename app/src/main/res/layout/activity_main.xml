@@ -23,12 +23,12 @@
             android:layout_weight="10" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/display"
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="40"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="numberSigned|numberDecimal" />
 
         <Space
             android:layout_width="0px"
@@ -57,6 +57,7 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="20"
+            android:onClick="plus"
             android:text="+" />
 
         <Space
@@ -68,6 +69,7 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="20"
+            android:onClick="minus"
             android:text="-" />
 
         <Space
@@ -79,6 +81,7 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="20"
+            android:onClick="multiply"
             android:text="*" />
 
         <Space
@@ -90,6 +93,7 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="20"
+            android:onClick="divide"
             android:text="/" />
 
         <Space
