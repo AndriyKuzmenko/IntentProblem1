@@ -54,6 +54,7 @@
             android:layout_weight="10" />
 
         <Button
+            android:id="@+id/plusButton"
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="20"
@@ -66,6 +67,7 @@
             android:layout_weight="10" />
 
         <Button
+            android:id="@+id/minusButton"
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="20"
@@ -78,6 +80,7 @@
             android:layout_weight="10" />
 
         <Button
+            android:id="@+id/multiplyButton"
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="20"
@@ -90,6 +93,7 @@
             android:layout_weight="10" />
 
         <Button
+            android:id="@+id/divideButton"
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="20"
