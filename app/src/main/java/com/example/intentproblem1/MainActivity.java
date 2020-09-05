@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity
         a=0;
         b=0;
         answer=0;
+        si=new Intent(this, CreditsActivity.class);
     }
 
     public void plus(View view)
@@ -73,6 +74,6 @@ public class MainActivity extends AppCompatActivity
 
     public void goToCredits(View view)
     {
-
+        startActivity(si);
     }
 }
