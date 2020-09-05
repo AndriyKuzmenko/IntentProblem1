@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity
 
     public void goToCredits(View view)
     {
+        si.putExtra("answer",answer);
         startActivity(si);
     }
 }
