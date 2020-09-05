@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
     double a, b, answer;
+    String aString,bString;
     char sign;
     EditText display;
     Intent si;
@@ -33,12 +35,13 @@ public class MainActivity extends AppCompatActivity
         minusButton=(Button)findViewById(R.id.minusButton);
         multiplyButton=(Button)findViewById(R.id.multiplyButton);
         divideButton=(Button)findViewById(R.id.divideButton);
-
     }
 
     public void plus(View view)
     {
-        a=Double.parseDouble(String.valueOf(display.getText()));
+        aString=String.valueOf(display.getText());
+        if (!check(aString)) return;
+        a=Double.parseDouble(aString);
         sign='+';
         display.setText("");
         plusButton.setEnabled(false);
@@ -49,7 +52,9 @@ public class MainActivity extends AppCompatActivity
 
     public void minus(View view)
     {
-        a=Double.parseDouble(String.valueOf(display.getText()));
+        aString=String.valueOf(display.getText());
+        if (!check(aString)) return;
+        a=Double.parseDouble(aString);
         sign='-';
         display.setText("");
         plusButton.setEnabled(false);
@@ -60,7 +65,9 @@ public class MainActivity extends AppCompatActivity
 
     public void multiply(View view)
     {
-        a=Double.parseDouble(String.valueOf(display.getText()));
+        aString=String.valueOf(display.getText());
+        if (!check(aString)) return;
+        a=Double.parseDouble(aString);
         sign='*';
         display.setText("");
         plusButton.setEnabled(false);
@@ -71,7 +78,9 @@ public class MainActivity extends AppCompatActivity
 
     public void divide(View view)
     {
-        a=Double.parseDouble(String.valueOf(display.getText()));
+        aString=String.valueOf(display.getText());
+        if (!check(aString)) return;
+        a=Double.parseDouble(aString);
         sign='/';
         display.setText("");
         plusButton.setEnabled(false);
@@ -82,7 +91,9 @@ public class MainActivity extends AppCompatActivity
 
     public void answer(View view)
     {
-        b=Double.parseDouble(String.valueOf(display.getText()));
+        bString=String.valueOf(display.getText());
+        if (!check(bString)) return;
+        b=Double.parseDouble(bString);
 
         if (sign=='+') answer=a+b;
         else if (sign=='-') answer=a-b;
@@ -108,5 +119,19 @@ public class MainActivity extends AppCompatActivity
     {
         si.putExtra("answer",answer);
         startActivity(si);
+    }
+
+    public boolean check(String x)
+    {
+        try
+        {
+            double d = Double.parseDouble(x);
+        }
+        catch (NumberFormatException nfe)
+        {
+            Toast.makeText(getApplicationContext(), "Type a number!!!!!!!!!!", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
     }
 }
