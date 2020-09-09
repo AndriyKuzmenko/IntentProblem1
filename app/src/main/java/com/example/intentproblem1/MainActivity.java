@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity
     EditText display;
     Intent si;
     Button plusButton,minusButton, multiplyButton, divideButton;
+    boolean error=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity
         a=0;
         b=0;
         answer=0;
-        sign='0';
+        sign='0';//sign='0' means no operation is done. 9=9
         si=new Intent(this, CreditsActivity.class);
 
         plusButton=(Button)findViewById(R.id.plusButton);
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity
         minusButton.setEnabled(false);
         multiplyButton.setEnabled(false);
         divideButton.setEnabled(false);
+        error=false;
     }
 
     public void minus(View view)
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity
         minusButton.setEnabled(false);
         multiplyButton.setEnabled(false);
         divideButton.setEnabled(false);
+        error=false;
     }
 
     public void multiply(View view)
@@ -74,6 +77,7 @@ public class MainActivity extends AppCompatActivity
         minusButton.setEnabled(false);
         multiplyButton.setEnabled(false);
         divideButton.setEnabled(false);
+        error=false;
     }
 
     public void divide(View view)
@@ -87,6 +91,7 @@ public class MainActivity extends AppCompatActivity
         minusButton.setEnabled(false);
         multiplyButton.setEnabled(false);
         divideButton.setEnabled(false);
+        error=false;
     }
 
     public void answer(View view)
@@ -98,10 +103,11 @@ public class MainActivity extends AppCompatActivity
         if (sign=='+') answer=a+b;
         else if (sign=='-') answer=a-b;
         else if (sign=='*') answer=a*b;
-        else if (sign=='/') answer=a/b;
+        else if (sign=='/') divide(a,b);
         else if (sign=='0') answer=b;
 
-        display.setText(""+answer);
+        if (!error) display.setText(""+answer);
+        else display.setText("Error");
 
         plusButton.setEnabled(true);
         minusButton.setEnabled(true);
@@ -118,7 +124,21 @@ public class MainActivity extends AppCompatActivity
     public void goToCredits(View view)
     {
         si.putExtra("answer",answer);
+        si.putExtra("error",error);
         startActivity(si);
+    }
+
+    public void divide(double x, double y)
+    {
+        if (y==0)
+        {
+            Toast.makeText(getApplicationContext(), "You can't divide by 0!!!!!!!!!!", Toast.LENGTH_LONG).show();
+            error=true;
+        }
+        else
+        {
+            answer=x/y;
+        }
     }
 
     public boolean check(String x)

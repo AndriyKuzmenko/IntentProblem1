@@ -28,7 +28,8 @@
             android:layout_height="match_parent"
             android:layout_weight="40"
             android:ems="10"
-            android:inputType="numberSigned|numberDecimal" />
+            android:inputType="numberSigned|numberDecimal"
+            android:text="0" />
 
         <Space
             android:layout_width="0px"
