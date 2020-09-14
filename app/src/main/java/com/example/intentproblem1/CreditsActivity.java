@@ -31,7 +31,8 @@ public class CreditsActivity extends AppCompatActivity
         {
             x = gi.getDoubleExtra("answer", 0);
 
-            answer.setText("Your last answer was: " + x);
+            if (x%1==0) answer.setText("Your last answer was: " + (int)x);
+            else answer.setText("Your last answer was: " + x);
         }
     }
 

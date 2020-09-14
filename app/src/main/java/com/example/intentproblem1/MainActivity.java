@@ -106,7 +106,8 @@ public class MainActivity extends AppCompatActivity
         else if (sign=='/') divide(a,b);
         else if (sign=='0') answer=b;
 
-        if (!error) display.setText(""+answer);
+        if (!error && answer%1==0) display.setText(""+(int)answer);
+        else if (!error) display.setText(""+answer);
         else display.setText("Error");
 
         plusButton.setEnabled(true);
